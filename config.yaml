@@ -1,7 +1,15 @@
 bot:
   name: "Hecate"
   debug: true
+  log: test.log
   networks:
-    token: "1234567"
-    host: "http://localhost"
-    port: 8443
+    token: "417140336:AAH4GQFJnkwiG-oqAELatk2yGxIKkWG_jQw"
+    ssl:
+      cert: "cert.pem"
+      key: "key.pem"
+    external:
+      port: 80
+      host: "http://localhost"
+    internal:
+      port: 8443
+      host: "http://localhost"
