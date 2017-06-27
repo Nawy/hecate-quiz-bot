@@ -1,0 +1,7 @@
+bot:
+  name: "Hecate"
+  debug: true
+  networks:
+    token: "1234567"
+    host: "http://localhost"
+    port: 8443
