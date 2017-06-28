@@ -56,11 +56,7 @@ func main() {
 			continue
 		}
 
-		userName := update.Message.From.UserName
 		log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
-
-		msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
-		msg.Text = "Как твое имя " + userName + "?"
-		bot.Send(msg)
+		bot.Send(handler(update))
 	}
 }

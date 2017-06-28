@@ -3,7 +3,7 @@ bot:
   debug: true
   log: test.log
   networks:
-    token: "417140336:AAH4GQFJnkwiG-oqAELatk2yGxIKkWG_jQw"
+    token: "figs"
     ssl:
       cert: "cert.pem"
       key: "key.pem"
