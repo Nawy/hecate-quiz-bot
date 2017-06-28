@@ -18,15 +18,19 @@ type AppConfigYAML struct {
 		Name     string `yaml:"name"`
 		Debug    bool   `yaml:"debug"`
 		Log      string `yaml:"log"`
-		Networks struct {
-			Token string `yaml:"token"`
-			Ssl   struct {
-				Cert string `yaml:"cert"`
-				Key  string `yaml:"key"`
-			}
-			External URL `yaml:"external"`
-			Internal URL `yaml:"internal"`
-		} `yaml:"networks"`
+		Token 	 string `yaml:"token"`
+		Aerospike struct {
+			Host string `yaml:"host"`
+			Port int `yaml:"port"`
+			Namespace string `yaml:"namespace"`
+		} `yaml:"aerospike"`
+		Resources struct {
+			Images string `yaml:"images"`
+		} `yaml:"resources"`
+		Commands struct {
+			Help string `yaml:"help"`
+			Games string `yaml:"games"`
+		} `yaml:"commands"`
 	} `yaml:"bot"`
 }
 
