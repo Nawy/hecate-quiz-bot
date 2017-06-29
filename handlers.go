@@ -6,6 +6,15 @@ import (
 	"io/ioutil"
 )
 
+// UserStatus for right handlers
+type UserStatus string
+
+const (
+	RENAME = UserStatus("rename")
+	QUESTION = UserStatus("question")
+	IDLE = UserStatus("idle")
+)
+
 var handlers map[string]func(*tgbotapi.Update) *tgbotapi.MessageConfig = make(map[string]func(*tgbotapi.Update) *tgbotapi.MessageConfig)
 var helpMsg string
 
@@ -13,7 +22,7 @@ func InitHandle() {
 	handlers["rename"] = cmdChangeName
 	handlers["help"] = cmdHelp
 
-	data, err := ioutil.ReadFile(conf.Bot.Commands.Help)
+	data, err := ioutil.ReadFile(conf.Bot.Resources.Help)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -21,7 +30,6 @@ func InitHandle() {
 }
 
 func Handle(update *tgbotapi.Update) *tgbotapi.MessageConfig {
-	log.Println("Command:", update.Message.Command())
 	handler := handlers[update.Message.Command()]
 	if handler != nil {
 		return handler(update)

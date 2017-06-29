@@ -1,0 +1,21 @@
+{
+  "rename": {
+    "hello": "",
+    "wrong": "",
+    "success": "",
+    "bye": ""
+  },
+  "question": {
+    "hello": "",
+    "wrong": "",
+    "success": "",
+    "bye": ""
+  },
+  "idle": {
+    "hello": "",
+    "wrong": "",
+    "success": "",
+    "bye": ""
+  }
+}
+
