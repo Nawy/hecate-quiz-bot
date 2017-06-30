@@ -2,6 +2,8 @@
   {
     "id": 1,
     "name": "First Game",
+    "description": "",
+    "hint_attempts": 2,
     "questions": [
       {
         "id": 1,
@@ -12,6 +14,7 @@
         "answers": [
           "ответ1", "1ответ", "ответ 1"
         ],
+        "hint": "",
         "attempts": 3,
         "points": 10
       },
@@ -24,6 +27,7 @@
         "answers": [
           "ответ2", "2ответ", "ответ 2"
         ],
+        "hint": "",
         "attempts": 3,
         "points": 10
       }
@@ -32,6 +36,8 @@
   {
     "id": 2,
     "name": "Second Game",
+    "description": "",
+    "hint_attempts": 2,
     "questions": [
       {
         "id": 1,
@@ -42,6 +48,7 @@
         "answers": [
           "ответ1", "1ответ", "ответ 1"
         ],
+        "hint": "",
         "attempts": 3,
         "points": 10
       },
@@ -54,6 +61,7 @@
         "answers": [
           "ответ2", "2ответ", "ответ 2"
         ],
+        "hint": "",
         "attempts": 3,
         "points": 10
       }

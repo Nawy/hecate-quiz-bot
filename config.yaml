@@ -9,6 +9,7 @@ bot:
     namespace: "content"
   resources:
     images: /data/images
-  commands:
     help: resources/help.msg
     games: resources/games.json
+    messages: resources/messages.json
+    database: resources/hecateusers.db

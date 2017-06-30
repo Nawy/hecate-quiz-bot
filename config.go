@@ -26,11 +26,11 @@ type AppConfigYAML struct {
 		} `yaml:"aerospike"`
 		Resources struct {
 			Images string `yaml:"images"`
-		} `yaml:"resources"`
-		Commands struct {
 			Help string `yaml:"help"`
 			Games string `yaml:"games"`
-		} `yaml:"commands"`
+			Messages string `yaml:"messages"`
+			Database string `yaml:"database"`
+		} `yaml:"resources"`
 	} `yaml:"bot"`
 }
 

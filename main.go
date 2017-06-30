@@ -9,7 +9,10 @@ import (
 func main() {
 	InitConfig()
 	defer InitLogger().Close()
+	defer InitStorage().Close()
 	InitHandle()
+	LoadMessages()
+	LoadGames()
 
 	bot, err := tgbotapi.NewBotAPI(conf.Bot.Token)
 	if err != nil {
@@ -24,11 +27,10 @@ func main() {
 	updates, err := bot.GetUpdatesChan(u)
 
 	for update := range updates {
-		if update.Message == nil {
+		if update.Message == nil && update.CallbackQuery == nil {
 			continue
 		}
 
-		log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
 		bot.Send(Handle(&update))
 	}
 }

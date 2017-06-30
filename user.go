@@ -9,6 +9,6 @@ type GameState struct {
 type User struct {
 	name string
 	telegramName string
-	state string
+	status UserStatus
 	gameState *GameState
 }
