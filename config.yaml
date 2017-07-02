@@ -1,7 +1,7 @@
 bot:
   name: "Hecate"
   debug: true
-  token: "none"
+  token: "417140336:AAH4GQFJnkwiG-oqAELatk2yGxIKkWG_jQw"
   log: test.log
   aerospike:
     host: "192.168.64.1"

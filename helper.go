@@ -3,7 +3,15 @@ package main
 import (
 	"gopkg.in/telegram-bot-api.v4"
 	"log"
+	"regexp"
 )
+
+var nameRegexp *regexp.Regexp
+
+func InitHelper() {
+	res, _ := regexp.Compile("[a-zA-ZА-Я-а-яЁё0-9]{1,20}")
+	nameRegexp = res
+}
 
 func getUpdateParam(update *tgbotapi.Update) (int, int64) {
 	if update.Message != nil {

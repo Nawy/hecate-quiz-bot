@@ -98,20 +98,21 @@ func cmdRename(update *tgbotapi.Update, user *User, chatID int64) *tgbotapi.Mess
 }
 
 func cmdRenameProcess(update *tgbotapi.Update, user *User, chatID int64) *tgbotapi.MessageConfig {
+	if !nameRegexp.MatchString(update.Message.Text) {
+		return sendMessage(update, MESSAGES["invalid_name_chars"], chatID)
+	}
 	if len(update.Message.Text) > 0 {
 		user.Name = update.Message.Text
 		user.Status = IDLE
 		UpdateUser(user)
 	}
 	msgProcessed := strings.Replace(MESSAGES["rename_finish"], "$name$", user.Name, 1)
-	msg := tgbotapi.NewMessage(update.Message.Chat.ID, EmojiReplace(msgProcessed))
-	return &msg
+	return sendMessage(update, msgProcessed, chatID)
 }
 
 func cmdCallme(update *tgbotapi.Update, user *User, chatID int64) *tgbotapi.MessageConfig {
 	msgProcessed := strings.Replace(MESSAGES["callme_msg"], "$name$", user.Name, 1)
-	msg := tgbotapi.NewMessage(update.Message.Chat.ID, msgProcessed)
-	return &msg
+	return sendMessage(update, msgProcessed, chatID)
 }
 
 func cmdHelp(update *tgbotapi.Update, user *User, chatID int64) *tgbotapi.MessageConfig {
@@ -178,6 +179,7 @@ func cmdStartGame(update *tgbotapi.Update, user *User, chatID int64) *tgbotapi.M
 		user.SelectedGameId = 0
 
 		user.CurrentHintAttempt = game.HintAttempts
+		user.CurrentAttempt = 0
 		user.CurrentPoints = 0
 		user.CurrentQuestionId = 0
 		return cmdAskQuestion(update, user, MESSAGES["game_start"], chatID, game)
@@ -212,12 +214,14 @@ func cmdQuestion(update *tgbotapi.Update, user *User, chatID int64) *tgbotapi.Me
 		responseText := MESSAGES["right_answer"]
 		user.CurrentQuestionId = user.CurrentQuestionId + 1
 		user.CurrentPoints = user.CurrentPoints + 1
+		user.CurrentAttempt = 0
 		return cmdAskQuestion(update, user, responseText, chatID, game)
 	} else {
 		user.CurrentAttempt = user.CurrentAttempt + 1
 		UpdateUser(user)
 		if user.CurrentAttempt == currentQuestion.Attempts {
 			user.CurrentQuestionId = user.CurrentQuestionId + 1
+			user.CurrentAttempt = user.CurrentAttempt + 1
 			responseText := MESSAGES["wrong_answer"]
 			return cmdAskQuestion(update, user, responseText, chatID, game)
 		}

@@ -12,6 +12,7 @@ func main() {
 	defer InitStorage().Close()
 	InitHandle()
 	InitEmojis()
+	InitHelper()
 	LoadMessages()
 	LoadGames()
 
