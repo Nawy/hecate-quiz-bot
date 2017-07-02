@@ -2,3 +2,4 @@
 ./idea
 hecate-quiz-bot
 *.log
+*.db

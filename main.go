@@ -11,6 +11,7 @@ func main() {
 	defer InitLogger().Close()
 	defer InitStorage().Close()
 	InitHandle()
+	InitEmojis()
 	LoadMessages()
 	LoadGames()
 

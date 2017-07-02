@@ -3,9 +3,10 @@ package main
 import (
 	"io/ioutil"
 	"encoding/json"
+	"strconv"
 )
 
-type GamesJSON []struct {
+type GameJSON struct {
 	Id int `json:"id"`
 	Name string `json:"name"`
 	Description string `json:"description"`
@@ -19,11 +20,13 @@ type GamesJSON []struct {
 		Answers []string `json:"answers"`
 		Hint string `json:"hint"`
 		Attempts int `json:"attempts"`
-		Points int `json:"points"`
-	}
+	} `json:"questions"`
 }
 
+type GamesJSON []GameJSON
+
 var GAMES GamesJSON = GamesJSON{}
+var GAMES_MAP map[string] int = make(map[string] int)
 
 func LoadGames() {
 	gamesFile, err := ioutil.ReadFile(conf.Bot.Resources.Games)
@@ -35,4 +38,13 @@ func LoadGames() {
 	if err != nil {
 		panic("Cannot read games.json by path " + conf.Bot.Resources.Messages)
 	}
+
+	for i, game := range GAMES {
+		gameIdString := strconv.Itoa(game.Id)
+		GAMES_MAP[gameIdString] = i
+	}
+}
+
+func GetGame(gameId string) *GameJSON {
+	return &GAMES[GAMES_MAP[gameId]]
 }

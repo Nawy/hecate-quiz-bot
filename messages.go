@@ -5,12 +5,7 @@ import (
 	"encoding/json"
 )
 
-type MessagesJSON map[string] struct {
-	Hello string `json:"hello"`
-	Wrong string `json:"wrong"`
-	Success string `json:"success"`
-	Bye string `json:"bye"`
-}
+type MessagesJSON map[string] string
 
 var MESSAGES MessagesJSON = MessagesJSON{}
 

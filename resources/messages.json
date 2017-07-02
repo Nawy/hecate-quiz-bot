@@ -1,21 +1,28 @@
 {
-  "rename": {
-    "hello": "",
-    "wrong": "",
-    "success": "",
-    "bye": ""
-  },
-  "question": {
-    "hello": "",
-    "wrong": "",
-    "success": "",
-    "bye": ""
-  },
-  "idle": {
-    "hello": "",
-    "wrong": "",
-    "success": "",
-    "bye": ""
-  }
-}
+  "game_list_topic": "Ты можешь поиграть в следующие игры:",
+  "wrong_request": "И что ты имел ввиду?",
+  "invalid_name_chars": "И все такие лучше буквы русского и латинского алфавита написать",
+  "idle_msg": "Что же будем делать? Выбери команду, или посмотри какие есть /help",
+  "callme_msg": "Для меня ты $name$. Можешь поменять если хочешь /rename",
+  "rename_hello": "Имя значит хочешь поменять? Сейчас я знаю тебя как $name$. Скажи мне как ты хочешь что бы я тебя называл?",
+  "rename_finish": "Хорошо $name$, я тебя запомнил :wink:",
+  "choose_game_wrong": "Чегоо? Тыкни в игру выше",
+  "game_hello": ":uppoint: Ты выбрал: \n$game_name$\n$game_description$\nКолличество подсказок: $attempts$\nНачнем?:devil:",
+  "game_start": "Поехали\n",
+  "game_question": ":question: $name$\n$text$\n",
+  "game_wrong_reply": "Так все таки, будем играть? Да нет?",
+  "game_start_agree": "Ну что же начнем!",
+  "game_start_disagree": "Ладно забудем, выбери что нибудь другое",
+  "wrong_answer_attempt": "Ответ неправильный! :pensivef: Попробуй еще $attempt$",
+  "wrong_answer": ":pensivef: Ответ неверный! Твои попытки закончились $name$.\n",
+  "right_answer": ":smile::oksign: Верно!\n",
+  "next_question": "Следующий вопрос:\n",
+  "game_is_finished": ":party::party::party:\nТы ответил $points$/$length$\n",
+  "agree_button": "Да начинай",
+  "disagree_button": "Неет не надо",
+  "normal_continue": "Хорошо $name, давай продолжим нашу игру\n",
+  "wrong_continue": "Чего? Мы не играем еще. Игры выбери а там посмотрим /games",
 
+  "agree": "да ага угу ес yes yeah yep давай",
+  "disagree": "нет не неа нее стой no nope погоди"
+}

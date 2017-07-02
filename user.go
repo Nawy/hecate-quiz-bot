@@ -1,14 +1,16 @@
 package main
 
-type GameState struct {
-	GameId int32
-	QuestionId int32
-	Attempt int32
-}
-
 type User struct {
-	name string
-	telegramName string
-	status UserStatus
-	gameState *GameState
+	ID int
+	Login string
+	Name string
+	Status string
+
+	SelectedGameId int
+
+	CurrentGameId int
+	CurrentQuestionId int
+	CurrentHintAttempt int
+	CurrentAttempt int
+	CurrentPoints int
 }

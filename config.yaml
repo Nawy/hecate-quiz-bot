@@ -12,4 +12,4 @@ bot:
     help: resources/help.msg
     games: resources/games.json
     messages: resources/messages.json
-    database: resources/hecateusers.db
+    database: resources/users.db

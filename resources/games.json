@@ -1,42 +1,52 @@
 [
   {
     "id": 1,
-    "name": "First Game",
-    "description": "",
+    "name": "Игра лично про тебя",
+    "description": "Будешь отвечать вопросы о себе",
     "hint_attempts": 2,
     "questions": [
       {
         "id": 1,
         "name": "Вопрос 1",
-        "text": "Текст вопроса 1",
+        "text": "Как зовут создателя этого квеста?",
         "image": "",
         "audio": "",
         "answers": [
-          "ответ1", "1ответ", "ответ 1"
+          "иван", "ваня", "вано", "ivan", "vanya"
         ],
         "hint": "",
-        "attempts": 3,
-        "points": 10
+        "attempts": 3
       },
       {
         "id": 2,
         "name": "Вопрос 2",
-        "text": "Текст вопроса 2",
+        "text": "Сколько лет разработчику?",
         "image": "",
         "audio": "",
         "answers": [
-          "ответ2", "2ответ", "ответ 2"
+          "22"
         ],
         "hint": "",
-        "attempts": 3,
-        "points": 10
+        "attempts": 3
+      },
+      {
+        "id": 3,
+        "name": "Вопрос 3",
+        "text": "Из какого города родом разработчик?",
+        "image": "",
+        "audio": "",
+        "answers": [
+          "ставрополь", "став", "ворошиловск"
+        ],
+        "hint": "",
+        "attempts": 3
       }
     ]
   },
   {
     "id": 2,
-    "name": "Second Game",
-    "description": "",
+    "name": "Международный квест",
+    "description": "Тут разные вопросы со",
     "hint_attempts": 2,
     "questions": [
       {
@@ -49,8 +59,7 @@
           "ответ1", "1ответ", "ответ 1"
         ],
         "hint": "",
-        "attempts": 3,
-        "points": 10
+        "attempts": 3
       },
       {
         "id": 2,
@@ -62,8 +71,39 @@
           "ответ2", "2ответ", "ответ 2"
         ],
         "hint": "",
-        "attempts": 3,
-        "points": 10
+        "attempts": 3
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Тайный тест :smirkingf:",
+    "description": "Тут разные вопросы со",
+    "hint_attempts": 2,
+    "questions": [
+      {
+        "id": 1,
+        "name": "Вопрос 1",
+        "text": "Текст вопроса 1",
+        "image": "",
+        "audio": "",
+        "answers": [
+          "ответ1", "1ответ", "ответ 1"
+        ],
+        "hint": "",
+        "attempts": 3
+      },
+      {
+        "id": 2,
+        "name": "Вопрос 2",
+        "text": "Текст вопроса 2",
+        "image": "",
+        "audio": "",
+        "answers": [
+          "ответ2", "2ответ", "ответ 2"
+        ],
+        "hint": "",
+        "attempts": 3
       }
     ]
   }
